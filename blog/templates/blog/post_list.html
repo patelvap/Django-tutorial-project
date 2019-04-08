@@ -1,5 +1,4 @@
 <html>
-
 	<head>
 		<title>Vraj's project</title>
 	</head>
@@ -8,16 +7,12 @@
 			<h1><a href="/">Sample Project</a></h1>
 		</div>
 
-		<div>
-			<p>published: 04.03.2019, 2:03</p>
-			<h2><a href="">My first post</a></h2>
-			<p>random text </p>
-		</div>
-
-		<div>
-			<p>published: 04.03.2019, 2:05</p>
-			<h2><a href="">My second post</a></h2>
-			<p>random text</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h2><a href="">{{ post.published_date }}</a></h2>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html>
